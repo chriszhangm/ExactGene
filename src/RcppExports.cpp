@@ -6,9 +6,14 @@
 
 using namespace Rcpp;
 
-// ExactGene
-List ExactGene(arma::vec Xt, arma::vec Xc, arma::vec Nt, arma::vec Nc, arma::vec pcupper, arma::vec pclower, double Thetagrid, double Pgrid, double cov_prob, double B, double dev_region_num);
-RcppExport SEXP _ExactGene_ExactGene(SEXP XtSEXP, SEXP XcSEXP, SEXP NtSEXP, SEXP NcSEXP, SEXP pcupperSEXP, SEXP pclowerSEXP, SEXP ThetagridSEXP, SEXP PgridSEXP, SEXP cov_probSEXP, SEXP BSEXP, SEXP dev_region_numSEXP) {
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
+// ExactGen
+List ExactGen(arma::vec Xt, arma::vec Xc, arma::vec Nt, arma::vec Nc, arma::vec pcupper, arma::vec pclower, double Thetagrid, double Pgrid, double cov_prob, double B, double dev_region_num);
+RcppExport SEXP _ExactGene_ExactGen(SEXP XtSEXP, SEXP XcSEXP, SEXP NtSEXP, SEXP NcSEXP, SEXP pcupperSEXP, SEXP pclowerSEXP, SEXP ThetagridSEXP, SEXP PgridSEXP, SEXP cov_probSEXP, SEXP BSEXP, SEXP dev_region_numSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -23,7 +28,7 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type cov_prob(cov_probSEXP);
     Rcpp::traits::input_parameter< double >::type B(BSEXP);
     Rcpp::traits::input_parameter< double >::type dev_region_num(dev_region_numSEXP);
-    rcpp_result_gen = Rcpp::wrap(ExactGene(Xt, Xc, Nt, Nc, pcupper, pclower, Thetagrid, Pgrid, cov_prob, B, dev_region_num));
+    rcpp_result_gen = Rcpp::wrap(ExactGen(Xt, Xc, Nt, Nc, pcupper, pclower, Thetagrid, Pgrid, cov_prob, B, dev_region_num));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -48,7 +53,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_ExactGene_ExactGene", (DL_FUNC) &_ExactGene_ExactGene, 11},
+    {"_ExactGene_ExactGen", (DL_FUNC) &_ExactGene_ExactGen, 11},
     {"_ExactGene_individual_p_cpp", (DL_FUNC) &_ExactGene_individual_p_cpp, 9},
     {NULL, NULL, 0}
 };
