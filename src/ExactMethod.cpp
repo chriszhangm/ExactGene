@@ -8,7 +8,7 @@ using namespace R;
 
 arma::mat outer_dif(double nt,double nc);
 arma::mat outer_sd(double nt,double nc);
-arma::vec match_cpp(vec v1, vec v2, double rev);
+arma::vec match_cpp(arma::vec v1, arma::vec v2, double rev);
 int find_min(arma::vec a);
 List individual_p_cpp(double xt, double xc, double nt, double nc,double pcupper,double pclower,
                      arma::vec theta_grd, double Pgrid,
