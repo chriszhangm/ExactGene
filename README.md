@@ -1,5 +1,7 @@
 # ExactGene
-Exact inference for meta-analysis of rare events based on the fixed-effect model
+
+Exact inference for meta-analysis of rare events based on the fixed-effect model.
+
 ## Installation of the package
 
 To install our package, you may execute the following codes:
@@ -10,7 +12,9 @@ devtools::install_github("chriszhangm/ExactGene")
 library(ExactGene)
 ```
 For Mac Users who cannot compile the code, please refer [this answer](https://thecoatlessprofessor.com/programming/cpp/r-compiler-tools-for-rcpp-on-macos/).
+
 ## A example of using _ExactGene_
+
 We show a real application to apply the function `ExactGen`, which constructs confidence intervals, estimates, and p-values for risk difference based on exact method with identity, arcsin square root, and inverse normal CDF transformations, and Mantel-Haenszel method with and without correction. The dataset we use is a meta-analysis conducted by Paolo Zanoni and et.al (2016) about the gene scavenger receptor class B member 1 (SCARB1) encodes scavenger receptor BI (SR-BI).
 ```{r, eval = FALSE}
 ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -52,7 +56,10 @@ CI Upper Bound       6.183e-04         6.183e-04      6.438e-04           6.068e
 P-value              7.156e-02         1.653e-01      4.103e-01           2.803e-02          3.686e-02
 ```
 
-## reference
+## Reference
+
 Tian, L., Cai, T., Pfeffer, M. A., Piankov, N., Cremieux, P. Y., & Wei, L. J. (2009). Exact and efficient inference procedure for meta-analysis and its application to the analysis of independent 2*2 tables with all available data but without artificial continuity correction. Biostatistics, 10(2), 275-281.
+
 Liu, D., Liu, R. Y., & Xie, M. G. (2014). Exact meta-analysis approach for discrete data and its application to 2*2 tables with rare events. Journal of the American Statistical Association, 109(508), 1450-1465.
+
 Paolo Zanoni, Sumeet A Khetarpal, Daniel B Larach, William F Hancock-Cerutti, John S Millar, Marina Cuchel, Stephanie DerOhannessian, Anatol Kontush, Praveen Surendran, Danish Saleheen, et al. Rare variant in scavenger receptor bi raises hdl cholesterol and increases risk of coronary heart disease. Science, 351(6278):1166–1171, 2016.
