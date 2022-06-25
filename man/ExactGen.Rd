@@ -41,7 +41,7 @@ ExactGen(Xt,Xc,Nt,Nc,pcupper,pclower,Thetagrid,Pgrid,cov_prob,B,dev_region_num)
   cov_prob=0.95
   B=5e+4
   dev_region_num=6
-  eee = ExactGen(Xt,Xc,Nt,Nc,pcupper,pclower,Thetagrid,Pgrid,cov_prob,B,dev_region_num)
+  eee = ExactGen(Xt=xt,Xc=xc,Nt=nt,Nc=nc,pcupper,pclower,Thetagrid,Pgrid,cov_prob,B,dev_region_num)
   #row1-row5: identity,square root, and inverse normal CDF transformations, and Mantel-Haenszel method with and without correction.
   ##Need estimated Risk Difference:
   eee$Estimate
